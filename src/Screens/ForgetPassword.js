@@ -5,7 +5,9 @@ import {
   TextInput,
   StyleSheet,
   TouchableOpacity,
-  Alert
+  Alert,
+  Image,
+  SafeAreaView
 } from 'react-native';
 import SharedButton from '../Components/Button';
 import Header from '../Components/Header';
@@ -43,10 +45,12 @@ function ForgetPassword() {
       
   };
   return (
+    <SafeAreaView>
     <View>
-      <Header name="Forget Password" />
+      {/* <Header name="Forget Password" /> */}
       <View style={styles.forgetContainer}>
-        <Icon name="user-circle-o" size={100} color="#F88379" />
+        <Image source={require('../../assets/man.png')}
+        style={{height:100 , width:100 , borderRadius:50}}/>
         <Text
           style={{
             fontWeight: 'bold',
@@ -66,7 +70,7 @@ function ForgetPassword() {
         <Text style={{color: 'black', fontSize: 16}}>password</Text>
         <View style={styles.textInputField}>
           <TextInput
-            style={{flexGrow: 1, textAlign: 'center'}}
+            style={{flexGrow: 1, textAlign: 'center' }}
             placeholder="Enter Email Address"
             keyboardType="email-address"
             onChangeText={addEmail}
@@ -81,6 +85,7 @@ function ForgetPassword() {
         </TouchableOpacity>
       </View>
     </View>
+    </SafeAreaView>
   );
 }
 
